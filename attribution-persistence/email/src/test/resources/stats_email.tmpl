@@ -1,0 +1,37 @@
+<html>
+<head>
+<style>
+table, th, td {
+    border: solid;
+    border-width: 1px;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+</style>
+</head>
+
+Hello Team,
+<br>
+<br>
+Please find the daily usage report:
+<br>
+<br>
+<table>
+ <tr>
+    <th id="sequenceNo">No.</th>
+    <th id="serviceName">Service Name</th>
+    <th id="spanCount">Span Count</th>
+    <th id="spanSizeBytes">Span Size</th>
+    <th id="operationCount">Operations Count</th>
+</tr>
+{{row}}
+</table>
+
+<br>
+Thanks,
+<br>
+Haystack Bot
+</html>

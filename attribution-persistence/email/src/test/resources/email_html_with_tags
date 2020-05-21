@@ -1,0 +1,57 @@
+<html>
+<head>
+<style>
+table, th, td {
+border: solid;
+border-width: 1px;
+border-collapse: collapse;
+}
+th, td {
+padding: 5px;
+text-align: left;
+}
+</style>
+</head>
+
+Hello Team,
+<br>
+<br>
+Please find the daily usage report:
+<br>
+<br>
+<table>
+ <tr>
+<th id="sequenceNo">No.</th>
+<th id="serviceName">Service Name</th>
+<th id="spanCount">Span Count</th>
+<th id="spanSizeBytes">Span Size</th>
+<th id="operationCount">Operations Count</th>
+<th id="tagKey1">Attributed Tag 1</th>
+</tr>
+
+<tr>
+<td headers="sequenceNo">1</td>
+<td headers="serviceName">service1</td>
+<td headers="spanCount">20.0K</td>
+<td headers="spanSizeBytes">19.5kb</td>
+<td headers="operationCount">4</td>
+<td headers='tagKey1'>123.0Mi</td>
+</tr>
+
+
+<tr>
+<td headers="sequenceNo">2</td>
+<td headers="serviceName">service2</td>
+<td headers="spanCount">5.0Mi</td>
+<td headers="spanSizeBytes">976.6kb</td>
+<td headers="operationCount">80.0K</td>
+<td headers='tagKey1'>6.0Mi</td>
+</tr>
+
+</table>
+
+<br>
+Thanks,
+<br>
+Haystack Bot
+</html>
