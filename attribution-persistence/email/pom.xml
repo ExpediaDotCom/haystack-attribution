@@ -24,7 +24,7 @@
         <apache.httpcomponents.version>4.2.5</apache.httpcomponents.version>
         <httpclient.version>4.5.3</httpclient.version>
         <json4s.version>3.5.3</json4s.version>
-        <jackson.version>2.9.5</jackson.version>
+        <jackson.version>2.10.4</jackson.version>
 
         <mainClass>com.expedia.www.haystack.attribution.persistence.email.App</mainClass>
     </properties>
