@@ -282,14 +282,14 @@ Transformers config for dumping the data to s3 in required format.
 #### Prerequisite: 
 
 * Make sure you have Java 1.8
+* Make sure you have Scala 2.12.*
 * Make sure you have docker 1.13 or higher
 
 #### Build
 
-You can choose to build the individual subdirectories if you're working on any specific sub-app but in case you are making changes to the contract 
-such as span or metric point which would effect multiple modules you should run
+You can choose to build the individual subdirectories if you're working on any specific sub-app but in case you are making changes to the contract such as span or ServiceStats which would effect multiple modules you should run
 
 ```
 make all
 ```
-This would build all the individual apps and including unit tests, jar + docker image build and run integration tests for haystack-trends.
+This would build all the individual apps and including unit tests & jar + docker image build for haystack-attribution.
