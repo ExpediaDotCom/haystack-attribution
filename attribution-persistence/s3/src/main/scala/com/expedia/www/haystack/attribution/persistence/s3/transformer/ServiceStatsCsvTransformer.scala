@@ -56,7 +56,7 @@ class ServiceStatsCsvTransformer extends ServiceStatsTransformer {
     // prepare the csv file header
     csvStringBuilder ++= "serviceName,spanCount,spanSizeBytes,lastSeen,operationCount,spanShare,env"
     csvStringBuilder.append(if (tagKeyNames.isEmpty) "" else "," + tagKeyNames.mkString(","))
-    csvStringBuilder.append(if (customTags.keys.isEmpty) "" else "," + customTags.keys.mkString(","))
+    csvStringBuilder.append(if (customTags.isEmpty) "" else "," + customTags.keys.mkString(","))
 
     csvStringBuilder.append(System.getProperty("line.separator"))
 
@@ -94,7 +94,7 @@ class ServiceStatsCsvTransformer extends ServiceStatsTransformer {
 
   override def init(id: String, customTags: Map[String, String], config: Config): Unit = {
     this.id = id
-    this.customTags = customTags
+    this.customTags = if (customTags == null) Map() else customTags
 
     this.tagsConfigList = {
       if (config.hasPath("tags.json") && StringUtils.isNoneEmpty(config.getString("tags.json"))) {
