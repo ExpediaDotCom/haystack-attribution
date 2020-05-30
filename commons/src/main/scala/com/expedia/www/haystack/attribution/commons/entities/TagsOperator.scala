@@ -81,16 +81,19 @@ object TagsOperator {
 
   def aggregateTags(spanOne: ServiceStats, spanTwo: ServiceStats): mutable.Map[String, AttributedTagValue] = {
     var aggregatedTags = mutable.Map[String, AttributedTagValue]()
-    aggregatedTags ++= spanOne.attributedTags // add existing tags to new Map
-    spanTwo.attributedTags.foreach {
-      case (attributedKey, value) =>
-        TagsOperatorType.withName(TagsConfig.getOperatorTypeByAttributeName(attributedKey, tagsConfigList).toUpperCase) match {
 
-          case TagsOperatorType.COUNT | TagsOperatorType.SUM =>
-            aggregatedTags += (attributedKey -> (value + aggregatedTags.get(attributedKey))) // add the values
-          case TagsOperatorType.BAGGAGE =>
-            aggregatedTags += (attributedKey -> value)
-        }
+    if (tagsConfigList != null && tagsConfigList.nonEmpty) {
+      aggregatedTags ++= spanOne.attributedTags // add existing tags to new Map
+      spanTwo.attributedTags.foreach {
+        case (attributedKey, value) =>
+          TagsOperatorType.withName(TagsConfig.getOperatorTypeByAttributeName(attributedKey, tagsConfigList).toUpperCase) match {
+
+            case TagsOperatorType.COUNT | TagsOperatorType.SUM =>
+              aggregatedTags += (attributedKey -> (value + aggregatedTags.get(attributedKey))) // add the values
+            case TagsOperatorType.BAGGAGE =>
+              aggregatedTags += (attributedKey -> value)
+          }
+      }
     }
     aggregatedTags
   }

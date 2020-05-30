@@ -42,8 +42,8 @@ class AppConfigurationSpec extends FunSpec with Matchers with EasyMockSugar {
 
       appConfig.transformersConfig.items.head.id should be("t1")
       appConfig.transformersConfig.items.head.classRelativePath should be("com.expedia.www.haystack.attribution.persistence.s3.transformer.ServiceStatsCsvTransformer")
-      appConfig.transformersConfig.items.head.customTags("tagKey1") should be("tagValue1")
-      appConfig.transformersConfig.items.head.customTags("tagKey2") should be("tagValue2")
+      appConfig.transformersConfig.items.head.customTags("customKey1") should be("customValue1")
+      appConfig.transformersConfig.items.head.customTags("customKey2") should be("customValue2")
 
       appConfig.transformers.head.getId should be("t1")
     }

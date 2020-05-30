@@ -19,11 +19,6 @@ install:
   - java -XX:+PrintFlagsFinal -version
   - ./mvnw --version
 
-addons:
-  hosts:
-    - elasticsearch
-    - cassandra
-
 env:
   global:
     - BRANCH=${TRAVIS_BRANCH}
