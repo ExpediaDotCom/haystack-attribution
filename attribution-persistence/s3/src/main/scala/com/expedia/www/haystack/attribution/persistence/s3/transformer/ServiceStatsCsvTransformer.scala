@@ -52,7 +52,12 @@ class ServiceStatsCsvTransformer extends ServiceStatsTransformer {
     dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"))
 
     val csvStringBuilder: StringBuilder = new StringBuilder
-    csvStringBuilder ++= "serviceName,spanCount,spanSizeBytes,lastSeen,operationCount,spanShare,env," + tagKeyNames.mkString(",") + "," + customTags.keys.mkString(",")
+
+    // prepare the csv file header
+    csvStringBuilder ++= "serviceName,spanCount,spanSizeBytes,lastSeen,operationCount,spanShare,env"
+    csvStringBuilder.append(if (tagKeyNames.isEmpty) "" else "," + tagKeyNames.mkString(","))
+    csvStringBuilder.append(if (customTags.keys.isEmpty) "" else "," + customTags.keys.mkString(","))
+
     csvStringBuilder.append(System.getProperty("line.separator"))
 
     try {
@@ -64,10 +69,14 @@ class ServiceStatsCsvTransformer extends ServiceStatsTransformer {
             dateFormat.format(stats.lastSeen) + "," +
             stats.operationCount + "," +
             CostCalculation.getCapacityShare(allServiceCombined.spanSizeBytes, allServiceCombined.spanCount, stats.spanSizeBytes, stats.spanCount) + "," +
-            environmentName + "," +
-            extractValuesForTagKeys(stats).mkString(",")+ "," +
-            customTags.values.mkString(","))
+            environmentName)
 
+        // append tag values
+        val tagValues = extractValuesForTagKeys(stats)
+        csvStringBuilder.append(if (tagValues.isEmpty) "" else  "," + tagValues.mkString(",") )
+
+        // append custom field values
+        csvStringBuilder.append(if (customTags.isEmpty) "" else "," + customTags.values.mkString(","))
         csvStringBuilder.append(System.getProperty("line.separator"))
       })
     } catch {
