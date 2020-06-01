@@ -1,5 +1,7 @@
 .PHONY: all clean attributor attribution-persistence release
 
+export DOCKER_ORG := expediadotcom
+
 PWD := $(shell pwd)
 
 clean:
