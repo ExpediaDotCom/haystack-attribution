@@ -6,10 +6,7 @@ Repo for attribution components for Haystack system.
 
 ## haystack-attributor module
 
-For smooth operation of Haystack cluster, we need to monitor the total traffic and which service is sending how much 
-data. Sometimes, we see a service going berserk, which puts severe load on whole infrastructure and impacting all the 
-services. Attributor is the component responsible for measuring and keeping track of the volume of spans sent by each 
-service.
+For smooth operation of a Haystack cluster, traffic should be monitored on a service-to-service basis. If a service goes berserk, it could put a severe load on the whole infrastructure and impact all other services. Attributor is the component responsible for measuring and keeping track of the volume of spans sent by each service.
 
 In addition to few basic attribution fields like span count, span size, operation count; one can also do attribution on
 the basis of span tags.
