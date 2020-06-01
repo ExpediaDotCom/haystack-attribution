@@ -24,7 +24,7 @@ It is scheduled as a cron job in our k8s cluster to send the email (for previous
 What it does:
 - rest call to attributor to fetch service stats for previous day's time window
 - creates an email template for stats
-- email using aws ses service / smtp to all the ids in configuration
+- email using aws ses service / smtp to all the ids provided in configuration
 
 -----------------------------------------
 ## haystack-attribution-persistence-s3 module
