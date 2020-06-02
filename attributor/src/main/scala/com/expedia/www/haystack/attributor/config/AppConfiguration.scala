@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory
 import scala.collection.JavaConverters._
 
 /**
-  * This class reads the configuration from the given resource name using {@link ConfigurationLoader ConfigurationLoader}
+  * This class reads the configuration from the given resource name using ConfigurationLoader
   */
 class AppConfiguration() {
   private val LOGGER = LoggerFactory.getLogger(classOf[AppConfiguration])
@@ -53,7 +53,7 @@ class AppConfiguration() {
   val healthStatusFilePath: String = config.getString("health.status.path")
 
   /**
-    * Returns instance of {@link KafkaConfiguration KafkaConfiguration} to be used by the kstreams application
+    * Returns instance of KafkaConfiguration to be used by the kstreams application
     */
   lazy val kafkaConfig: KafkaConfiguration = {
 
@@ -109,7 +109,7 @@ class AppConfiguration() {
   }
 
   /**
-    * Returns instance of {@link HttpServiceConfiguration HttpServiceConfiguration} for running attributor as a service
+    * Returns instance of HttpServiceConfiguration for running attributor as a service
     */
   lazy val httpConfig: HttpServiceConfiguration = {
     val service = config.getConfig("service")
@@ -127,7 +127,7 @@ class AppConfiguration() {
   }
 
   /**
-    * Returns instance of {@link AggregateStatsConfiguration AggregateStatsConfiguration} for aggregation related config
+    * Returns instance of AggregateStatsConfiguration for aggregation related config
     */
   lazy val aggregateStatsConfig: AggregateStatsConfiguration = {
     val cfg = config.getConfig("aggregate.stats")
@@ -135,14 +135,14 @@ class AppConfiguration() {
   }
 
   /**
-    * Returns instance of {@link ElasticSearchConfiguration ElasticSearchConfiguration} for ES config
+    * Returns instance of ElasticSearchConfiguration for ES config
     */
   lazy val elasticSearchConfiguration: ElasticSearchConfiguration = {
     ElasticSearchConfiguration(elasticSearchClientConfig, config.getString("elasticsearch.index.service.metadata.name"))
   }
 
   /**
-    * Returns instance of collection of {@link TagsConfig TagsConfig} for attribution fields
+    * Returns instance of collection of TagsConfig for attribution fields
     */
   lazy val tagsConfigList: Seq[TagsConfig] = {
     if (config.hasPath("tags.json") && StringUtils.isNoneEmpty(config.getString("tags.json"))) {

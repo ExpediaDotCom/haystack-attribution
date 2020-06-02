@@ -50,7 +50,7 @@ class StreamSupplier(topologySupplier: Supplier[Topology],
   private val LOGGER = LoggerFactory.getLogger(classOf[StreamSupplier])
 
   /**
-    * creates a new instance of KafkaStreams application wrapped as a {@link ManagedService} instance
+    * creates a new instance of KafkaStreams application wrapped as a ManagedService instance
     *
     * @return instance of ManagedService
     */

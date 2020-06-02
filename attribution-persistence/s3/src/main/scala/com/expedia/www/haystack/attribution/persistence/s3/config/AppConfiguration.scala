@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory
 import scala.reflect.ClassTag
 
 /**
-  * This class reads the configuration from the given resource name using {@link ConfigurationLoader ConfigurationLoader}
+  * This class reads the configuration from the given resource name using ConfigurationLoader
   */
 class AppConfiguration() {
   private val LOGGER = LoggerFactory.getLogger(classOf[AppConfiguration])
