@@ -29,7 +29,7 @@ import org.apache.commons.lang3.StringUtils
 import org.slf4j.LoggerFactory
 
 /**
-  * This class reads the configuration from the given resource name using {@link ConfigurationLoader ConfigurationLoader}
+  * This class reads the configuration from the given resource name using ConfigurationLoader
   */
 class AppConfiguration() {
   private val LOGGER = LoggerFactory.getLogger(classOf[AppConfiguration])
