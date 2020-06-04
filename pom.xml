@@ -15,6 +15,12 @@
         <module>attribution-persistence</module>
     </modules>
 
+    <scm>
+        <connection>scm:git:git://github.com/ExpediaDotCom/haystack-attribution.git</connection>
+        <developerConnection>scm:git:ssh://github.com/ExpediaDotCom/haystack-attribution.git</developerConnection>
+        <url>http://github.com/ExpediaDotCom/haystack-attribution</url>
+    </scm>
+
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Repo to monitor the haystack system</description>
     <url>https://github.com/ExpediaInc/haystack-attribution</url>
