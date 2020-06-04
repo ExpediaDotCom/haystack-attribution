@@ -13,6 +13,7 @@
     <artifactId>haystack-attribution-s3</artifactId>
 
     <properties>
+        <finalName>${project.artifactId}-${project.version}</finalName>
         <project.jdk.version>1.8</project.jdk.version>
         <metrics-core.version>3.0.2</metrics-core.version>
         <logback.version>1.2.3</logback.version>
@@ -207,7 +208,7 @@
     </dependencies>
 
     <build>
-        <finalName>haystack-attribution-persistence-s3</finalName>
+        <finalName>${finalName}</finalName>
 
         <sourceDirectory>${basedir}/src/main/scala</sourceDirectory>
         <resources>
