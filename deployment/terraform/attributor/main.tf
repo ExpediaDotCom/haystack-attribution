@@ -24,7 +24,6 @@ data "template_file" "config_data" {
 
   vars {
     elasticsearch_endpoint = "${var.elasticsearch_endpoint}"
-    cassandra_hostname = "${var.cassandra_hostname}"
     kafka_endpoint = "${var.kafka_endpoint}"
     attributor_tags = "${var.attributor_tags}"
     num_stream_threads = "${var.num_stream_threads}"

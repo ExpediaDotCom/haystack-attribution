@@ -5,7 +5,6 @@ module "attributor" {
   namespace = "${var.namespace}"
   elasticsearch_endpoint = "${var.elasticsearch_hostname}:${var.elasticsearch_port}"
   kafka_endpoint = "${var.kafka_hostname}:${var.kafka_port}"
-  cassandra_hostname = "${var.cassandra_hostname}"
   graphite_hostname = "${var.graphite_hostname}"
   graphite_port = "${var.graphite_port}"
   graphite_enabled = "${var.graphite_enabled}"

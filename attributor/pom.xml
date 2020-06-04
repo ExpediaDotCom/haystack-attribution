@@ -24,10 +24,7 @@
         <jetty.version>9.4.28.v20200408</jetty.version>
         <apache.httpcomponents.version>4.2.5</apache.httpcomponents.version>
         <haystack.logback.metrics.appender.version>0.1.12</haystack.logback.metrics.appender.version>
-
-        <cassandra.driver.version>3.5.0</cassandra.driver.version>
         <httpclient.version>4.5.3</httpclient.version>
-
         <pegdown.version>1.6.0</pegdown.version>
         <scalatest.version>3.0.3</scalatest.version>
         <grpc.version>1.7.1</grpc.version>
@@ -83,14 +80,6 @@
                 <artifactId>jackson-module-scala_${scala.major.minor.version}</artifactId>
                 <version>${jackson.version}</version>
             </dependency>
-
-            <!-- cassandra client-->
-            <dependency>
-                <groupId>com.datastax.cassandra</groupId>
-                <artifactId>cassandra-driver-core</artifactId>
-                <version>${cassandra.driver.version}</version>
-            </dependency>
-
 
             <dependency>
                 <groupId>com.expedia.www</groupId>
@@ -186,11 +175,6 @@
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-clients</artifactId>
             <version>${kafka-version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.datastax.cassandra</groupId>
-            <artifactId>cassandra-driver-core</artifactId>
         </dependency>
 
         <dependency>
