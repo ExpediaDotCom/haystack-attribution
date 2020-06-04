@@ -31,12 +31,12 @@
         <netty.handler.version>4.1.50.Final</netty.handler.version>
         <scoverage.plugin.version>1.3.0</scoverage.plugin.version>
         <javax.mail.version>1.6.2</javax.mail.version>
+        <metrics-core.version>3.0.2</metrics-core.version>
         <mainClass>com.expedia.www.haystack.attributor.App</mainClass>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <!-- protobuf -->
             <dependency>
                 <groupId>com.google.protobuf</groupId>
                 <artifactId>protobuf-java</artifactId>
@@ -125,6 +125,11 @@
     </dependencyManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>com.codahale.metrics</groupId>
+            <artifactId>metrics-core</artifactId>
+            <version>${metrics-core.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>com.sun.mail</groupId>
