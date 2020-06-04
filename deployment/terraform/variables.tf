@@ -2,8 +2,6 @@ variable "elasticsearch_hostname" {}
 variable "elasticsearch_port" {}
 variable "kafka_hostname" {}
 variable "kafka_port" {}
-variable "cassandra_hostname" {}
-variable "cassandra_port" {}
 variable "graphite_hostname" {}
 variable "graphite_port" {}
 variable "graphite_enabled" {}
