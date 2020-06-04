@@ -286,6 +286,7 @@ Transformers config for dumping the data to s3 in required format.
 
 You can choose to build the individual subdirectories if you're working on any specific sub-app but in case you are making changes to the contract such as span or ServiceStats which would effect multiple modules you should run
 
+
 ```
 make all
 ```
