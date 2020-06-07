@@ -1,6 +1,6 @@
 module "attributor" {
   source = "attributor"
-  image = "${var.haystack-attribution["docker_registry"]}/library/haystack-attributor:${var.haystack-attribution["version"]}"
+  image = "${var.haystack-attribution["docker_registry"]}/haystack-attributor:${var.haystack-attribution["version"]}"
   replicas = "${var.haystack-attribution["attributor_instances"]}"
   namespace = "${var.namespace}"
   elasticsearch_endpoint = "${var.elasticsearch_hostname}:${var.elasticsearch_port}"
@@ -24,7 +24,7 @@ module "attributor" {
 
 module "attribution-persistence-email" {
   source = "attribution-persistence-email"
-  image = "${var.haystack-attribution["docker_registry"]}/library/haystack-attribution-persistence-email:${var.haystack-attribution["version"]}"
+  image = "${var.haystack-attribution["docker_registry"]}/haystack-attribution-persistence-email:${var.haystack-attribution["version"]}"
   replicas = "${var.haystack-attribution["attribution-persistence-email_instances"]}"
   namespace = "${var.namespace}"
   graphite_hostname = "${var.graphite_hostname}"
@@ -50,7 +50,7 @@ module "attribution-persistence-email" {
 
 module "attribution-persistence-s3" {
   source = "attribution-persistence-s3"
-  image = "${var.haystack-attribution["docker_registry"]}/library/haystack-attribution-persistence-s3:${var.haystack-attribution["version"]}"
+  image = "${var.haystack-attribution["docker_registry"]}/haystack-attribution-persistence-s3:${var.haystack-attribution["version"]}"
   replicas = "${var.haystack-attribution["attribution-persistence-s3_instances"]}"
   namespace = "${var.namespace}"
   graphite_hostname = "${var.graphite_hostname}"
