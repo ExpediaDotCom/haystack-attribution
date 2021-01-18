@@ -22,7 +22,7 @@
         <logback.version>1.2.3</logback.version>
         <slf4j-api.version>1.7.25</slf4j-api.version>
         <json4s.version>3.5.3</json4s.version>
-        <jetty.version>9.4.28.v20200408</jetty.version>
+        <jetty.version>11.0.0</jetty.version>
         <apache.httpcomponents.version>4.2.5</apache.httpcomponents.version>
         <haystack.logback.metrics.appender.version>0.1.12</haystack.logback.metrics.appender.version>
         <httpclient.version>4.5.3</httpclient.version>
